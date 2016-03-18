@@ -1,0 +1,2 @@
+# Read from the file words.txt and output the word frequency list to stdout.
+cat words.txt | tr ' ' '\n' | grep "^[a-z]\{1,\}$" | sort | uniq -c | awk -F ' ' '{ printf "%s %s\n", $2, $1 }' | sort -nrk 2
